@@ -4,6 +4,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-6c43e0.svg)](LICENSE)
 
+**Live application:** [https://influencer-insight.onrender.com](https://influencer-insight.onrender.com)
+
 Created and maintained by
 [Amalakanti Siva Rama Surya Nandh](https://github.com/AmalakantiSivaRamaSuryaNandh).
 
