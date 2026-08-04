@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Influencer Insight — Find standout creators{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">A project by Amalakanti Siva Rama Surya Nandh</span>
+        <h1>Find the creator who leads their niche.</h1>
+        <p class="hero-text">
+          Explore a sample Instagram influencer dataset. We process biographies
+          with natural language techniques, compare engagement signals, and
+          surface the strongest match for your selected category.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href="{{ url_for('main.search') }}">Start discovering <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="{{ url_for('main.methodology') }}">See how it works</a>
+        </div>
+        <p class="microcopy">No login needed · Runs on a local CSV · Built for learning</p>
+      </div>
+
+      <div class="hero-visual" aria-label="Illustration of creator ranking cards">
+        <div class="signal signal-one"></div>
+        <div class="signal signal-two"></div>
+        <article class="preview-card preview-card-main">
+          <div class="avatar avatar-purple">NK</div>
+          <div>
+            <span class="mini-label">Top technology creator</span>
+            <h2>Neha Kulkarni</h2>
+            <p>@bytewithneha</p>
+          </div>
+          <span class="score-pill">29,670 score</span>
+        </article>
+        <article class="preview-card preview-card-small card-left">
+          <div class="avatar avatar-orange">SM</div>
+          <div><strong>Sana Khan</strong><span>Food</span></div>
+        </article>
+        <article class="preview-card preview-card-small card-right">
+          <div class="avatar avatar-green">RD</div>
+          <div><strong>Rohan Das</strong><span>Travel</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section steps-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">A clear three-step flow</span>
+        <h2>From category to recommendation</h2>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>Choose a niche</h3>
+          <p>Select fashion, food, travel, technology, fitness, or beauty.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <h3>Process biographies</h3>
+          <p>NLTK tokenizes and normalizes profile text to find relevant matches.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>Rank engagement</h3>
+          <p>A transparent weighted formula identifies the strongest sample profile.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endblock %}

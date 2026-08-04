@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Top {{ category|title }} influencer — Influencer Insight{% endblock %}
+
+{% block content %}
+  <section class="result-section">
+    <div class="container result-container">
+      <a class="back-link" href="{{ url_for('main.search') }}"><span aria-hidden="true">←</span> New search</a>
+      <div class="result-heading">
+        <div>
+          <span class="eyebrow">Top {{ category }} match</span>
+          <h1>Your recommended creator</h1>
+        </div>
+        <div class="rank-badge"><span>#1</span> ranked</div>
+      </div>
+
+      <article class="result-card">
+        <div class="profile-summary">
+          <div class="profile-avatar" aria-hidden="true">
+            {{ influencer.display_name.split()[0][0] }}{{ influencer.display_name.split()[-1][0] }}
+          </div>
+          <div class="profile-copy">
+            <span class="category-chip">{{ influencer.category }}</span>
+            <h2>{{ influencer.display_name }}</h2>
+            <p class="username">@{{ influencer.username }}</p>
+            <p class="bio">{{ influencer.bio }}</p>
+          </div>
+          <div class="score-block">
+            <span>Influence score</span>
+            <strong>{{ "{:,.0f}".format(influencer.influence_score) }}</strong>
+            <small>weighted points</small>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric"><span>Followers</span><strong>{{ "{:,}".format(influencer.followers) }}</strong></div>
+          <div class="metric"><span>Likes</span><strong>{{ "{:,}".format(influencer.likes) }}</strong></div>
+          <div class="metric"><span>Comments</span><strong>{{ "{:,}".format(influencer.comments) }}</strong></div>
+          <div class="metric"><span>Shares</span><strong>{{ "{:,}".format(influencer.shares) }}</strong></div>
+          <div class="metric highlight-metric"><span>Engagement rate</span><strong>{{ "{:.2f}".format(influencer.engagement_rate) }}%</strong></div>
+        </div>
+      </article>
+
+      <div class="result-notes">
+        <article class="note-card">
+          <span class="note-icon" aria-hidden="true">NLP</span>
+          <div>
+            <h3>Why this profile matched</h3>
+            <p>The selected category appears in the normalized category and biography tokens.</p>
+          </div>
+        </article>
+        <article class="note-card">
+          <span class="note-icon" aria-hidden="true">ƒx</span>
+          <div>
+            <h3>How the score works</h3>
+            <p>10% followers + 40% likes + 30% comments + 20% shares. <a href="{{ url_for('main.methodology') }}">Read the assumptions</a>.</p>
+          </div>
+        </article>
+      </div>
+
+      {% if alternatives %}
+        <section class="alternatives" aria-labelledby="alternatives-title">
+          <h2 id="alternatives-title">Other strong matches</h2>
+          <div class="alternative-grid">
+            {% for item in alternatives %}
+              <article>
+                <div class="small-avatar" aria-hidden="true">{{ item.display_name[0] }}</div>
+                <div>
+                  <h3>{{ item.display_name }}</h3>
+                  <p>@{{ item.username }}</p>
+                </div>
+                <strong>{{ "{:,.0f}".format(item.influence_score) }}</strong>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

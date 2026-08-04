@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this educational project, please cite it using this metadata."
+title: "Influencer Insight: Unveiling Top Instagram Influencers Using NLP"
+type: software
+authors:
+  - family-names: "Amalakanti"
+    given-names: "Siva Rama Surya Nandh"
+repository-code: "https://github.com/AmalakantiSivaRamaSuryaNandh/influencer-insight"
+url: "https://github.com/AmalakantiSivaRamaSuryaNandh/influencer-insight"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-04
+keywords:
+  - flask
+  - natural-language-processing
+  - nltk
+  - pandas
+  - influencer-ranking
+abstract: >-
+  An educational Flask application that preprocesses fictional influencer
+  biographies with NLTK, matches a selected category, and ranks profiles with a
+  transparent weighted engagement score.

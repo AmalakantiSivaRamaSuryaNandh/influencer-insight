@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Discover an influencer — Influencer Insight{% endblock %}
+
+{% block content %}
+  <section class="page-hero compact-hero">
+    <div class="container narrow">
+      <span class="eyebrow">Creator discovery</span>
+      <h1>Which category are you exploring?</h1>
+      <p>Choose a category and the app will compare matching biographies and engagement metrics.</p>
+    </div>
+  </section>
+
+  <section class="section form-section">
+    <div class="container narrow">
+      <form class="search-card" action="{{ url_for('main.search') }}" method="post" novalidate>
+        {% if error %}
+          <div class="alert" role="alert">
+            <strong>We could not complete that search.</strong>
+            <span>{{ error }}</span>
+          </div>
+        {% endif %}
+
+        <label for="category">Influencer category</label>
+        <div class="select-wrap">
+          <select id="category" name="category" required aria-describedby="category-help">
+            <option value="">Choose a category</option>
+            {% for category in categories %}
+              <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
+                {{ category|title }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+        <p class="field-help" id="category-help">The list comes directly from the validated sample dataset.</p>
+        <button class="button button-primary button-full" type="submit">Find top influencer <span aria-hidden="true">→</span></button>
+      </form>
+
+      {% if categories %}
+        <div class="category-list" aria-label="Available categories">
+          {% for category in categories %}
+            <span>{{ category|title }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

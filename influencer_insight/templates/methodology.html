@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Methodology — Influencer Insight{% endblock %}
+
+{% block content %}
+  <section class="page-hero compact-hero">
+    <div class="container narrow">
+      <span class="eyebrow">Transparent by design</span>
+      <h1>How the recommendation is produced</h1>
+      <p>This implementation follows the report's documented CSV, NLP, filtering, and ranking flow.</p>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container content-grid">
+      <div class="method-list">
+        <article>
+          <span>1</span>
+          <div><h2>Load and validate</h2><p>Pandas reads the CSV and verifies every required text and numeric field before analysis.</p></div>
+        </article>
+        <article>
+          <span>2</span>
+          <div><h2>Preprocess text</h2><p>NLTK lowercases and tokenizes the text, removes punctuation and stop words, and then lemmatizes each token.</p></div>
+        </article>
+        <article>
+          <span>3</span>
+          <div><h2>Match a category</h2><p>The requested category tokens are compared with each influencer's category and biography tokens.</p></div>
+        </article>
+        <article>
+          <span>4</span>
+          <div><h2>Rank matches</h2><p>Matching profiles are ordered by their calculated influence score, with followers breaking a tie.</p></div>
+        </article>
+      </div>
+
+      <aside class="formula-card">
+        <span class="eyebrow">Implementation assumption</span>
+        <h2>Influence score</h2>
+        <div class="formula">
+          <span>followers × 0.10</span>
+          <span>+ likes × 0.40</span>
+          <span>+ comments × 0.30</span>
+          <span>+ shares × 0.20</span>
+        </div>
+        <p>The source report names these four weighted metrics but does not provide exact weights. These values are transparent, testable choices made for this reconstruction.</p>
+        <div class="addition-callout">
+          <strong>Addition beyond the report</strong>
+          <span>An engagement-rate percentage is also shown as supporting context; it does not change the ranking.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
