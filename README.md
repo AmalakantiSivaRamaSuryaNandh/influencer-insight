@@ -6,7 +6,7 @@
 
 **Live application:** [https://influencer-insight.onrender.com](https://influencer-insight.onrender.com)
 
-Created and maintained by
+Repository reconstructed and maintained by
 [Amalakanti Siva Rama Surya Nandh](https://github.com/AmalakantiSivaRamaSuryaNandh).
 
 **Influencer Insight: Unveiling Top Instagram Influencers Using NLP** is a
@@ -19,13 +19,42 @@ profiles.
 > are fictional sample data. The project does not connect to Instagram or claim
 > to measure real people.
 
+## Project information
+
+| Field | Details |
+|---|---|
+| Project title | **Influencer Insight: Unveiling Top Instagram Influencers Using Natural Language Processing (NLP)** |
+| Programme | **B.Tech – CSE (Artificial Intelligence & Data Science)** |
+| Institution | **Kakinada Institute of Engineering & Technology** |
+| Academic period | **2020–2024** |
+| Project guide | **Ms. Bavirisetti Himagiri Nandini, M.Tech, Assistant Professor** |
+| Project type | Five-member final-year group project |
+| Domain | Natural language processing, data analysis, influencer ranking |
+| Demonstrated stack | Python, Flask, Pandas, NLTK, HTML and CSS |
+| Repository data | 24 fictional sample profiles in a local CSV file |
+
+## Original academic project team
+
+| Student | Roll number |
+|---|---|
+| Amalakanti Siva Rama Surya Nandh | 20B21A45C7 |
+| Nukala Sai Sri Pavan | 20B21A45C9 |
+| Bainapalli Balu | 20B21A45D6 |
+| Nurukurthi Bhuvana Shankar | 21B25A4515 |
+| Ills Satya Sekar | 21B25A4518 |
+
+The table uses the spellings on the project report's cover page. The
+presentation and report contain a few conflicting names and feature claims;
+these are recorded transparently in the
+[document consistency audit](docs/document-audit.md).
+
 ## Project story
 
-I originally completed this topic as part of my B.Tech CSE - Artificial
-Intelligence and Data Science work. I later rebuilt the demonstrated idea as a
-complete, maintainable Flask application so I could refresh the concepts,
-understand every part of the implementation, and share a runnable version with
-other learners.
+The original five-member team completed this topic as part of the B.Tech CSE –
+Artificial Intelligence and Data Science programme. Amalakanti Siva Rama Surya
+Nandh later rebuilt the demonstrated idea as a complete, maintainable Flask
+application to refresh the concepts, understand every part of the
+implementation, and share a runnable version with other learners.
 
 The source report describes a simple CSV + NLTK + weighted-ranking application.
 It does not provide every source file, template, dataset field, or exact score
@@ -46,6 +75,9 @@ original document" section below.
 The core flow is intentionally simple because that is what the implementation
 section of the source report describes. No trained machine-learning model or
 Instagram API credentials are required.
+
+For a claim-by-claim comparison of the report, presentation, and working
+repository, see [`docs/document-audit.md`](docs/document-audit.md).
 
 ## Technology
 
@@ -174,6 +206,8 @@ related service test and the methodology page so the behavior remains clear.
 influencer-insight/
 ├── app.py                         # Local development entry point
 ├── wsgi.py                        # Production WSGI entry point
+├── docs/
+│   └── document-audit.md          # PDF-to-repository consistency review
 ├── influencer_insight/
 │   ├── __init__.py                # Flask application factory
 │   ├── routes.py                  # Web routes and validation flow
@@ -251,54 +285,23 @@ Keep metrics as non-negative whole numbers. Run `python -m pytest` after a data
 change; several tests also verify the included sample rows and total count, so
 update those expectations when intentionally replacing the sample data.
 
-## Upload to GitHub
+## Deployment
 
-1. Create a new **empty** repository on GitHub. Do not add a remote README,
-   license, or `.gitignore`, because this project already contains them.
-2. In a terminal opened inside this folder, run:
+The application is deployed at
+[influencer-insight.onrender.com](https://influencer-insight.onrender.com).
+This repository includes `render.yaml`, `wsgi.py`, Gunicorn, and a fixed Python
+version for reproducible Render deployment. Changes to `main` are tested by
+GitHub Actions before the hosted service is updated.
 
-```bash
-git init
-git add .
-git commit -m "Initial commit: Influencer Insight Flask app"
-git branch -M main
-git remote add origin https://github.com/AmalakantiSivaRamaSuryaNandh/influencer-insight.git
-git push -u origin main
-```
+## Attribution
 
-If Git asks for identity details, configure them for this repository:
+The original academic work belongs to the five-member team listed above. This
+repository reconstruction is maintained by **Amalakanti Siva Rama Surya
+Nandh** ([GitHub](https://github.com/AmalakantiSivaRamaSuryaNandh)).
 
-```bash
-git config user.name "Amalakanti Siva Rama Surya Nandh"
-git config user.email "259166328+AmalakantiSivaRamaSuryaNandh@users.noreply.github.com"
-```
-
-GitHub no longer accepts an account password for command-line pushes. Use the
-browser sign-in offered by Git Credential Manager, GitHub CLI, or a personal
-access token.
-
-## Deploy the live Flask website
-
-GitHub stores, reviews, and tests the source code; the Flask server still needs
-a Python web host. This repository includes `render.yaml`, `wsgi.py`, Gunicorn,
-and a fixed Python version for a Render deployment.
-
-1. Push the repository to GitHub.
-2. Sign in to Render and choose **New > Blueprint**.
-3. Connect `AmalakantiSivaRamaSuryaNandh/influencer-insight`.
-4. Review the detected `render.yaml` service and create it.
-5. Add the final live URL to the GitHub repository's **About** section.
-
-Render will install `requirements.txt`, run `gunicorn wsgi:app`, and redeploy
-after the connected `main` branch changes and its GitHub checks pass.
-
-## Author
-
-**Amalakanti Siva Rama Surya Nandh**  
-GitHub: [@AmalakantiSivaRamaSuryaNandh](https://github.com/AmalakantiSivaRamaSuryaNandh)
-
-For academic attribution, see `CITATION.cff`. For contributor information, see
-`AUTHORS.md`.
+For complete attribution, see [`AUTHORS.md`](AUTHORS.md). Citation metadata for
+both the software reconstruction and original academic project is available in
+[`CITATION.cff`](CITATION.cff).
 
 ## License
 

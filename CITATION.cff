@@ -20,3 +20,18 @@ abstract: >-
   An educational Flask application that preprocesses fictional influencer
   biographies with NLTK, matches a selected category, and ranks profiles with a
   transparent weighted engagement score.
+references:
+  - type: generic
+    title: "Influencer Insight: Unveiling Top Instagram Influencers Using Natural Language Processing (NLP)"
+    authors:
+      - family-names: "Amalakanti"
+        given-names: "Siva Rama Surya Nandh"
+      - family-names: "Nukala"
+        given-names: "Sai Sri Pavan"
+      - family-names: "Bainapalli"
+        given-names: "Balu"
+      - family-names: "Nurukurthi"
+        given-names: "Bhuvana Shankar"
+      - family-names: "Ills"
+        given-names: "Satya Sekar"
+    year: 2024
