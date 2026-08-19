@@ -43,10 +43,8 @@ profiles.
 | Nurukurthi Bhuvana Shankar | 21B25A4515 |
 | Ills Satya Sekar | 21B25A4518 |
 
-The table uses the spellings on the project report's cover page. The
-presentation and report contain a few conflicting names and feature claims;
-these are recorded transparently in the
-[document consistency audit](docs/document-audit.md).
+The student names and roll numbers follow the project report's cover page and
+bonafide certificate.
 
 ## Project story
 
@@ -75,9 +73,6 @@ original document" section below.
 The core flow is intentionally simple because that is what the implementation
 section of the source report describes. No trained machine-learning model or
 Instagram API credentials are required.
-
-For a claim-by-claim comparison of the report, presentation, and working
-repository, see [`docs/document-audit.md`](docs/document-audit.md).
 
 ## Technology
 
@@ -206,8 +201,6 @@ related service test and the methodology page so the behavior remains clear.
 influencer-insight/
 ├── app.py                         # Local development entry point
 ├── wsgi.py                        # Production WSGI entry point
-├── docs/
-│   └── document-audit.md          # PDF-to-repository consistency review
 ├── influencer_insight/
 │   ├── __init__.py                # Flask application factory
 │   ├── routes.py                  # Web routes and validation flow

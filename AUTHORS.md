@@ -36,7 +36,6 @@ The production structure, sample dataset, exact score weights, validation,
 responsive design, tests, repository community files, continuous integration,
 and deployment configuration are documented additions made for this repository.
 
-Name and guide inconsistencies in the two source PDFs are explained in
-[`docs/document-audit.md`](docs/document-audit.md). The spellings above follow
-the project report cover and its bonafide certificate, with the report cover
-used as the canonical source for abbreviated student names.
+The spellings above follow the project report cover and its bonafide
+certificate, with the report cover used as the canonical source for abbreviated
+student names.
